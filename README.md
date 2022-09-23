@@ -1,2 +1,2 @@
-# Curso-IoT-Extens-o
+# Curso-IoT-Extensao
 Atividade do curso de extensão IoT
