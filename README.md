@@ -1,4 +1,4 @@
-# Curso-IoT-Extensao
+# Curso de Extensão IoT
 Atividade do curso de extensão IoT - Game Crashy Bird
 
 # Código em Blocos
