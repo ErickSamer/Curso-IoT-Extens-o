@@ -7,5 +7,7 @@ Atividade do curso de extensão IoT - Game Crashy Bird
 </p>
 
 # Código em JavaScript
-
 https://github.com/ErickSamer/Curso-IoT-Extensao/blob/main/C%C3%B3digo%20em%20JavaScript
+
+# Código em JavaScript
+
