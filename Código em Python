@@ -1,0 +1,33 @@
+def on_button_pressed_a():
+    bird.change(LedSpriteProperty.Y, -1)
+input.on_button_pressed(Button.A, on_button_pressed_a)
+
+def on_button_pressed_b():
+    bird.change(LedSpriteProperty.Y, 1)
+input.on_button_pressed(Button.B, on_button_pressed_b)
+
+obstaculo_vazio = 0
+ticks = 0
+bird: game.LedSprite = None
+index = 0
+obstaculos: List[game.LedSprite] = []
+bird = game.create_sprite(0, 2)
+bird.set(LedSpriteProperty.BLINK, 300)
+
+def on_forever():
+    global obstaculo_vazio, ticks
+    while len(obstaculos) > 0 and obstaculos[0].get(LedSpriteProperty.X) == 0:
+        obstaculos.remove_at(0).delete()
+    for obstaculo2 in obstaculos:
+        obstaculo2.change(LedSpriteProperty.X, -1)
+    if ticks % 3 == 0:
+        obstaculo_vazio = randint(0, 4)
+        for index2 in range(5):
+            if index2 != obstaculo_vazio:
+                obstaculos.append(game.create_sprite(4, index2))
+    for obstaculo3 in obstaculos:
+        if obstaculo3.get(LedSpriteProperty.X) == bird.get(LedSpriteProperty.X) and obstaculo3.get(LedSpriteProperty.X) == bird.get(LedSpriteProperty.X):
+            game.game_over()
+    ticks += 1
+    basic.pause(1000)
+basic.forever(on_forever)
